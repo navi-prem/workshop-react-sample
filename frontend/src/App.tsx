@@ -4,7 +4,7 @@ import CheckBoxRoundedIcon from "@mui/icons-material/CheckBoxRounded";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 
 interface Data {
-  id: number;
+  id?: number;
   description: string;
   checked: boolean;
 }
@@ -48,7 +48,7 @@ function ListComp({ data, checked, deleteData }: Prop) {
 }
 
 function App() {
-  const [data, setData] = useState([
+  const [data, setData] = useState<Data[]>([
     { id: -1, description: "LOADING . . ", checked: true },
   ]);
   const [input, setInput] = useState("");
